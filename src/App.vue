@@ -1,15 +1,18 @@
 <template>
-    <div>
-        <mainTabbar />
-    </div>
+  <div>
+    <mainTabbar />
+  </div>
 </template>
 <script>
-import mainTabbar from "components/shoppingMall/mailTabbar/mainTabbar";
+import mainTabbar from "components/shoppingMall/mainTabbar";
 export default {
-    name: "app",
-    components: {
-        mainTabbar,
-    },
+  name: "app",
+  components: {
+    mainTabbar
+  }
 };
 </script>
-<style></style>
+<style>
+@import url("./assets/css/base.css");
+@import url("./assets/css/normalize.css");
+</style>

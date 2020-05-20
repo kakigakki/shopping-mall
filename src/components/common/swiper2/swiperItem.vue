@@ -1,22 +1,21 @@
 <template>
-  <div class="slide">
+  <div class="swiperItem">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Slide"
-};
+  name:"swiperItem"
+}
 </script>
 
 <style scoped>
-.slide {
-  width: 100%;
+.swiperItem{
+  width:100%;
   flex-shrink: 0;
 }
-
-.slide img {
+.swiperItem img{
   width: 100%;
 }
 </style>

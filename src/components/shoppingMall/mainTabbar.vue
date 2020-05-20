@@ -1,8 +1,9 @@
 <template>
    <div id="app">
+      <router-view></router-view>
         <tabbar>
             <template>
-                <tabbarItem>
+                <tabbarItem path="/home">
                     <template v-slot:img1>
                         <img src="~assets/img/tabbar/home.svg" />
                     </template>
@@ -10,10 +11,10 @@
                         <img src="~assets/img/tabbar/home_active.svg" alt="" />
                     </template>
                     <template v-slot:text>
-                        <div>首页</div>
+                        <div >首页</div>
                     </template>
                 </tabbarItem>
-                <tabbarItem>
+                <tabbarItem path="/category">
                     <template v-slot:img1>
                         <img src="~assets/img/tabbar/category.svg" />
                     </template>
@@ -27,7 +28,7 @@
                         <div>分类</div>
                     </template>
                 </tabbarItem>
-                <tabbarItem>
+                <tabbarItem path="/cart">
                     <template v-slot:img1>
                         <img src="~assets/img/tabbar/shopcart.svg" />
                     </template>
@@ -41,7 +42,7 @@
                         <div>购物车</div>
                     </template>
                 </tabbarItem>
-                <tabbarItem>
+                <tabbarItem path="/profile">
                     <template v-slot:img1>
                         <img src="~assets/img/tabbar/profile.svg" />
                     </template>
