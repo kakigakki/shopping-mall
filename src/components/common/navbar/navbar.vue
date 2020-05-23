@@ -37,10 +37,12 @@ export default {
   width: 100%;
   color: white;
   height: 42px;
-  position: relative;
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 1;
 
 }
 .nav img{
