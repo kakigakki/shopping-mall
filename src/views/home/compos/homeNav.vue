@@ -1,10 +1,8 @@
 <template>
-  <navbar show-back show-front>
-    <div>
+  <navbar>
       <template>
-      <p>购物街</p>
+      <p class="text">购物街</p>
       </template>
-    </div>
   </navbar>
 </template>
 
@@ -18,6 +16,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.text{
+  text-align: center;
+}
 </style>

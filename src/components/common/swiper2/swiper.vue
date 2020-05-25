@@ -9,7 +9,7 @@
       <slot name="item">
       </slot>
     </div>
-    <div v-if="isIndicator&& itemLength > 1">
+    <div v-if="isIndicator&& (itemLength > 1)">
       <div class="indicator">
         <div
           v-for="(item,index) in itemLength"
@@ -187,9 +187,9 @@ export default {
   height: 8px;
   margin: 2px;
   border-radius: 4px;
-  background-color: rgba(165, 42, 42, 0.438);
+  background-color: #fff;
 }
 .active {
-  background-color: rgba(165, 42, 42, 1);
+  background-color: var(--color-tint);
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="imgBox">
-    <div class="imgItem" v-for="(item,index) in goods" :key="index">
-      <img :src="item.show.img" alt="">
+    <div class="imgItem" v-for="(item,index) in goods" :key="index" @click="toDetailPage(item.iid)">
+      <img :src="item.show.img" alt="" @load="imgLoad">
       <p class="title">
         {{item.title}}
       </p>
@@ -21,6 +21,16 @@ export default {
     goods:{
       type:Array
     }
+  },
+  methods:{
+    imgLoad(){
+      this.$bus.$emit("imgLoad")
+    },
+    toDetailPage(iid){
+      this.$router.push({
+        path:"/detail"+iid
+      })
+    }
   }
 }
 </script>
@@ -39,11 +49,15 @@ export default {
 }
 .imgItem>img{
  width: 100%;
+ border-radius: 10px;
 }
 .imgItem .info{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.imgItem .info span:nth-child(1){
+  color: var(--color-tint);
 }
 .imgItem .info span:nth-child(1)::after{
   content: "";

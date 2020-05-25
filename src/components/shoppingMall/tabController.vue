@@ -37,6 +37,7 @@ export default {
     justify-content: center;
     align-items: center;
     height: 40px;
+    background: #fff;
   }
   .tab .item{
     flex:1;
