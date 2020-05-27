@@ -141,6 +141,9 @@ import BScroll from 'better-scroll'
       },
       openPullUp(){
         this.scroll && this.scroll.openPullUp()
+      },
+      getY(){
+        return this.scroll?.y
       }
     }
   } 

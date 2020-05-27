@@ -78,7 +78,8 @@ export default {
             },
             genre: "pop",
             showBackArrow: false,
-            tabControllerFix :false
+            tabControllerFix :false,
+            leaveScroll:0
         };
     },
     created() {
@@ -98,6 +99,15 @@ export default {
         this.$bus.$on("imgLoad",()=>{
             refresh()
         })
+    },
+    activated(){
+        this.$refs.scroll.refresh()
+        this.$refs.scroll.scrollTo(0,this.leaveScroll,0)
+        
+    },
+    deactivated(){
+        this.leaveScroll = this.$refs.scroll.getY()
+        console.log(this.leaveScroll);
     },
     methods: {
         //获取当前选中种类的图片展示

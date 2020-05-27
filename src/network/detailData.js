@@ -8,3 +8,8 @@ export function getDetail(id) {
     }
   })
 }
+export class BaseInfo {
+  constructor(title, highPrice, lowPrice, discountText, discountColor, sold, collect, express, services) {
+    Object.assign(this, { title, highPrice, lowPrice, discountText, discountColor, sold, collect, express, services })
+  }
+}
