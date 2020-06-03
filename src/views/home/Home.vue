@@ -39,15 +39,16 @@ import recommand from "./compos/recommand";
 import feature from "./compos/feature";
 import tabController from "components/shoppingMall/tabController";
 import showGoods from "components/shoppingMall/showGoods";
-import backArrow from "./compos/backArrow";
+import backArrow from "components/shoppingMall/backArrow";
 //scroll库
 import scroll from "components/common/scroll/myScroll";
 //网络请求
 import { getMultiData, getGoodsData } from "network/homeData";
-//工具
-import {debounce} from "common/util/util"
+//混入:监视各个路由的图片加载
+import {imgLoadMixin,backToTopMixin} from "common/util/mixin"
 export default {
     name: "Home",
+    mixins:[imgLoadMixin,backToTopMixin],
     components: {
         homeNav,
         mianswiper,
@@ -56,7 +57,7 @@ export default {
         tabController,
         showGoods,
         scroll,
-        backArrow,
+        backArrow
     },
     data() {
         return {
@@ -77,7 +78,6 @@ export default {
                 },
             },
             genre: "pop",
-            showBackArrow: false,
             tabControllerFix :false,
             leaveScroll:0
         };
@@ -94,20 +94,17 @@ export default {
         })
     },
     mounted(){
-        let refresh = debounce(this.$refs.scroll.refresh,10)
-        //当每有一张图片加载时,bscroll重新加载
-        this.$bus.$on("imgLoad",()=>{
-            refresh()
-        })
+
     },
     activated(){
+        //返回离开时记录的y轴的位置
         this.$refs.scroll.refresh()
         this.$refs.scroll.scrollTo(0,this.leaveScroll,0)
         
     },
     deactivated(){
+        //记录当前的位置
         this.leaveScroll = this.$refs.scroll.getY()
-        console.log(this.leaveScroll);
     },
     methods: {
         //获取当前选中种类的图片展示
@@ -146,9 +143,6 @@ export default {
 
             //将导航栏吸顶
             this.tabControllerFix = -pos.y>this.$refs.tabC2.$el.offsetTop
-        },
-        backToTop() {
-            this.$refs.scroll.scrollTo(0, 0, 300);
         },
         //上拉加载数据
         pullData(){

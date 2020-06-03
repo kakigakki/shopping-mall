@@ -1,7 +1,7 @@
 <template>
   <div class="imgBox">
     <div class="imgItem" v-for="(item,index) in goods" :key="index" @click="toDetailPage(item.iid)">
-      <img :src="item.show.img" alt="" @load="imgLoad">
+      <img :src="item.image||item.show.img" alt="" @load="imgLoad">
       <p class="title">
         {{item.title}}
       </p>
@@ -27,9 +27,11 @@ export default {
       this.$bus.$emit("imgLoad")
     },
     toDetailPage(iid){
-      this.$router.push({
-        path:"/detail"+iid
-      })
+      if(iid){
+        this.$router.push({
+          path:"/detail"+iid
+        })
+      }
     }
   }
 }

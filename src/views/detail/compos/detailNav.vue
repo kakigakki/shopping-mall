@@ -6,7 +6,7 @@
           v-for="(item,index) in navGenre" 
           :key="index" 
           :class="{active:index == currentIndex}"
-          @click="whoAmI(index)" >{{item}}</a>
+          @click="whereAmI(index)" >{{item}}</a>
        </div>
     </template>
   </navbar>
@@ -26,8 +26,9 @@ export default {
     }
   },
   methods:{
-    whoAmI(index){
+    whereAmI(index){
       this.currentIndex=index
+      this.$emit("jumpTo",index)
     }
   },
 }

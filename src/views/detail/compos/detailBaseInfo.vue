@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <p class="title">
       {{baseInfo.title}}
     </p>

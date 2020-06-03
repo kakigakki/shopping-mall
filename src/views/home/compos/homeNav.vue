@@ -1,7 +1,7 @@
 <template>
   <navbar>
       <template>
-      <p class="text">购物街</p>
+      <p>购物街</p>
       </template>
   </navbar>
 </template>
@@ -17,7 +17,4 @@ export default {
 </script>
 
 <style scoped>
-.text{
-  text-align: center;
-}
 </style>

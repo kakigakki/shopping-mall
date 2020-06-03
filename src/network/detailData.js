@@ -13,3 +13,10 @@ export class BaseInfo {
     Object.assign(this, { title, highPrice, lowPrice, discountText, discountColor, sold, collect, express, services })
   }
 }
+
+export function getRecommend() {
+  return axios({
+    method: "get",
+    url: "/recommend"
+  })
+}
