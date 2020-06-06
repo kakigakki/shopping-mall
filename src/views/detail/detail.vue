@@ -115,14 +115,14 @@ export default {
       if(result.rate.cRate){
           this.commentInfo = result.rate.list[0]
       }
-      Object.assign(this.detailCartInfo,
-      {id:res.iid,
-      img: info.topImages[0],
-      title:info.title,
-      desc:result.detailInfo.desc,
-      price:info.highNowPrice,
-      cartCount:1})
-      
+      this.$set(this.detailCartInfo,"checked",true)
+      this.detailCartInfo.id = res.iid
+      this.detailCartInfo.img = info.topImages[0],
+      this.detailCartInfo.title = info.title,
+      this.detailCartInfo.desc = result.detailInfo.desc,
+      this.detailCartInfo.price = info.highNowPrice,
+      this.detailCartInfo.cartCount = 1
+  
     }),
     getRecommend().then(res=>{
         this.recommend = res.data.list
