@@ -17,7 +17,7 @@
             @pullingUp="pullData"
         >
             <div class="content">
-                <mianswiper :banner="banner" />
+                <homeSwiper :banner="banner" />
                 <recommand :reco="recoList" />
                 <feature />
                 <tabController
@@ -34,7 +34,7 @@
 <script>
 //组件
 import homeNav from "./compos/homeNav";
-import mianswiper from "./compos/mainSwiper";
+import homeSwiper from "./compos/homeSwiper";
 import recommand from "./compos/recommand";
 import feature from "./compos/feature";
 import tabController from "components/shoppingMall/tabController";
@@ -51,7 +51,7 @@ export default {
     mixins:[imgLoadMixin,backToTopMixin],
     components: {
         homeNav,
-        mianswiper,
+        homeSwiper,
         recommand,
         feature,
         tabController,

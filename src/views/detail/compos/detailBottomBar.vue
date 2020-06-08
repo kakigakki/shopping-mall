@@ -35,10 +35,18 @@ export default {
       }
     }
   },
+  data(){
+    return {
+      toastText:"",
+      showToast:true
+    }
+  },
   methods:{
     //点击购物车后,将商品信息发送到vuex管理
     addCart(){
-      this.$store.dispatch("addCart",this.cartInfo)
+      this.$store.dispatch("addCart",this.cartInfo).then((res)=>{
+          this.$toast.showToast(res,1000)
+      })
     }
   }
 }

@@ -44,7 +44,7 @@
 <script>
 //组件
 import detailNav from "./compos/detailNav"
-import detailSwiper from "./compos/detailSwiper"
+import detailSwiper from "./compos/detialSwiper"
 import detailBaseInfo from "./compos/detailBaseInfo"
 import detailShopInfo from "./compos/detailShopInfo"
 import detailDetailInfo from "./compos/detailDetailInfo"
@@ -107,6 +107,7 @@ export default {
       let result = res.result
       let info = res.result.itemInfo
       this.images = info.topImages
+      console.log(this.images);
       this.baseInfo = new BaseInfo(info.title,info.highPrice,info.highNowPrice,info.discountDesc,info.discountBgColor,result.columns[0],result.columns[1],result.columns[2],result.shopInfo.services)
       this.shopInfo = result.shopInfo
       this.detailInfo.desc = result.detailInfo.desc
