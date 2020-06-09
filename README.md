@@ -1,4 +1,4 @@
-# shopping-mall
+# Vue shopping-mall
 
 ## Project setup
 ```
