@@ -64,6 +64,10 @@ import BScroll from 'better-scroll'
       refreshDelay: {
         type: Number,
         default: 20
+      },
+      bounce:{
+        type:Boolean,
+        default:true
       }
     },
     mounted() {
@@ -86,7 +90,8 @@ import BScroll from 'better-scroll'
             threshold: 50,
             moreTxt:"加载更多",
             noMoreTxt:"没有更多的数据了"
-          }
+          },
+          bounce:this.bounce
         })
         // 是否派发滚动事件
         if (this.listenScroll) {
