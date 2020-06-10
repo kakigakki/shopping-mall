@@ -1,10 +1,11 @@
 <template>
 <div class="category">
   <categoryNav class="nav"></categoryNav>
+  <div class="activedSticky" v-show="selectedCatagory.isShow">{{selectedCatagory.title}}</div>
     <div class="grid">
-      <scroll class="wrapper" :probe-type="2" :bounce="false">
+      <scroll class="wrapper" :probe-type="2" :bounce="false" @scroll="scrollLeftBar">
         <div class="content">
-          <categoryLeftBar class="categoryBar" :list="categoryList" @emitMaitkey="choose"></categoryLeftBar>
+          <categoryLeftBar class="categoryBar" :list="categoryList" @emitMaitkey="choose" ref="leftBar"></categoryLeftBar>
         </div>
       </scroll>
       <scroll class="wrapper" :probe-type="2" ref="scroll">
@@ -37,7 +38,12 @@ import {getCategory,getSubcategory} from "network/categoryData"
     data(){
       return{
         category:{},
-        categoryGoods:[]
+        categoryGoods:[],
+        selectedCatagory:{
+          checkedIndex:0,
+          title:"正在流行",
+          isShow:false
+        }
       }
     },
     computed:{
@@ -53,10 +59,17 @@ import {getCategory,getSubcategory} from "network/categoryData"
       //getCategoryDetail("10062603","pop").then(res=>console.log(res))
     },
     methods:{
-      choose(maitKey){
-       getSubcategory(maitKey).then(res=>{
-         this.categoryGoods = res.data.list
+      choose(maitKey,index,title){
+        this.selectedCatagory.isShow =false
+        this.selectedCatagory.checkedIndex= index
+        this.selectedCatagory.title = title
+        getSubcategory(maitKey).then(res=>{
+        this.categoryGoods = res.data.list
        })
+      },
+      scrollLeftBar(pos){
+        console.log(pos.y);
+        -pos.y>=this.selectedCatagory.checkedIndex*50?this.selectedCatagory.isShow=true:this.selectedCatagory.isShow=false
       }
     }
   }
@@ -71,5 +84,16 @@ import {getCategory,getSubcategory} from "network/categoryData"
 .grid{
   display: grid;
   grid-template-columns: 25% 75%;
+}
+
+.activedSticky{
+  position: fixed;
+  top: 42px;
+  width: 25vw;
+  padding:18px 0;
+  font-size: 13px;
+  text-align: center;
+  background: #fff;
+  z-index: 9;
 }
 </style>

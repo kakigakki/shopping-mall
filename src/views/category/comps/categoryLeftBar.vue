@@ -1,6 +1,6 @@
 <template>
   <div class="bar">
-    <div class="item" v-for="item of list" :key="item.title" @click="choose(item.maitKey)">
+    <div class="item" v-for="(item,index) in list" :key="index" @click="choose(item.maitKey,index,item.title)" :class="{isActive:CheckedIndex ===index}">
       {{item.title}}
     </div>
   </div>
@@ -15,8 +15,17 @@ export default {
     }
   },
   methods:{
-    choose(maitKey){
-      this.$emit("emitMaitkey",maitKey)
+    choose(maitKey,index,title){
+      this.CheckedIndex = index
+      this.$emit("emitMaitkey",maitKey,index,title)
+    },
+    setSticky(){
+
+    }
+  },
+  data(){
+    return {
+      CheckedIndex:0
     }
   }
 }
@@ -30,6 +39,10 @@ export default {
   padding:18px 0;
   font-size: 13px;
   text-align: center;
-  border-bottom: 1px solid gray;
+  box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.308);
+}
+
+.isActive{
+  background: #fff;
 }
 </style>

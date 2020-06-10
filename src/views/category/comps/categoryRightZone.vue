@@ -36,6 +36,7 @@ export default {
 .item{
   width: 80%;
   text-align: center;
+  font-size: 14px;
 }
 .item img{
   width: 100%;
