@@ -2,7 +2,7 @@
   <div>
     <p>{{detailInfo.desc}}</p>
     <div v-for="(item,index) in detailInfo.imgs" :key="index" class="img">
-      <img :src="item" alt="" @load="detailImgLoad">
+      <img v-lazy="item" alt="" @load="detailImgLoad">
     </div>
   </div>
 </template>
