@@ -1,19 +1,27 @@
 <template>
-    <div>
-        <div class="zone">
-            <div class="item" v-for="(item, index) in list" :key="index">
-                <img :src="item.image" alt="" @load="imgLoad" />
-                <p>{{ item.title }}</p>
-            </div>
-        </div>
-        <tabController
-            :genre="['流行', '新款', '精选']"
-            @chooseGenre="choose"
-            class="tab"
-            v-if="list.length"
-        ></tabController>
-        <showGoods :goods="moreGoods[genre]"></showGoods>
+  <div>
+    <div class="zone">
+      <div
+        class="item"
+        v-for="(item, index) in list"
+        :key="index"
+      >
+        <img
+          :src="item.image"
+          alt=""
+          @load="imgLoad"
+        />
+        <p>{{ item.title }}</p>
+      </div>
     </div>
+    <tabController
+      :genre="['流行', '新款', '精选']"
+      @chooseGenre="choose"
+      class="tab"
+      v-if="list.length"
+    ></tabController>
+    <showGoods :goods="moreGoods[genre]"></showGoods>
+  </div>
 </template>
 
 <script>
@@ -67,25 +75,25 @@ export default {
 
 <style scoped>
 .zone {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 15px;
-    grid-column-gap: 15px;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 15px;
+  grid-column-gap: 15px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
 }
 .item {
-    width: 80%;
-    text-align: center;
-    font-size: 14px;
+  width: 80%;
+  text-align: center;
+  font-size: 14px;
 }
 .item img {
-    width: 100%;
+  width: 100%;
 }
 
 .tab {
-    margin-top: 20px;
-    box-shadow: 0px -3px 9px 0px #c7c3c3;
+  margin-top: 20px;
+  box-shadow: 0px -3px 9px 0px #c7c3c3;
 }
 </style>

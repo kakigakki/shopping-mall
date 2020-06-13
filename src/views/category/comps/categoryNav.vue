@@ -1,9 +1,9 @@
 <template>
-    <navbar>
-        <template>
-            <p>分类导航</p>
-        </template>
-    </navbar>
+  <navbar>
+    <template>
+      <p>分类导航</p>
+    </template>
+  </navbar>
 </template>
 
 <script>
