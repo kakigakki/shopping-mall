@@ -1,10 +1,24 @@
 <template>
-  <div class="item" @click="activate">
-    <div v-if="noShow" class="img1">
+  <div
+    class="item"
+    @click="activate"
+  >
+    <div
+      v-if="noShow"
+      class="img1"
+    >
       <slot name="img1"></slot>
     </div>
-    <div v-else class="img2"><slot name="img2"></slot></div>
-    <div class="text" :style="{ color: tcolor }">
+    <div
+      v-else
+      class="img2"
+    >
+      <slot name="img2"></slot>
+    </div>
+    <div
+      class="text"
+      :style="{ color: tcolor }"
+    >
       <slot name="text"></slot>
     </div>
   </div>
