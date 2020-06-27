@@ -47,13 +47,13 @@ npm run build
 
 ![20200627183549](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20200627183549.png)
 
-###　種類選択画面
+### 種類選択画面
 
 ![20200627183349](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20200627183349.png)
 
 ![20200627183414](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20200627183414.png)
 
-###　カート画面
+### カート画面
 
 ![20200627183705](https://raw.githubusercontent.com/kakigakki/picBed/master/imgs/20200627183705.png)
 
