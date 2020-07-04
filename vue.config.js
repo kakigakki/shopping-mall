@@ -4,8 +4,7 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ?
-    '/shopping-mall/' : '/',
+  publicPath: process.env.NODE_ENV === "production" ? "/shopping-mall/" : "/",
 
   chainWebpack: (config) => {
     config.resolve.alias
