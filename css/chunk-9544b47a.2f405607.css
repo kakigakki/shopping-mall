@@ -1,0 +1,1 @@
+.nav{width:100%;color:#fff;height:2.625rem;position:absolute;top:0;display:grid;grid-template-columns:1fr 6fr 1fr;justify-items:stretch;align-items:center;z-index:1;box-shadow:0 .0625rem .125rem .0625rem rgba(0,0,0,.055)}.nav img{height:2.1875rem;vertical-align:middle}.nav img:first-child{transform:scale(.7)}.nav .center{grid-column:2/3}.center{text-align:center}
