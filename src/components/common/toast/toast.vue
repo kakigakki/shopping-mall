@@ -15,7 +15,6 @@ export default {
   },
   methods:{
     showToast(text,duration){
-      console.log(text);
       this.text =text
       this.show = true
       setTimeout(() => {

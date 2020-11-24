@@ -37,9 +37,6 @@ export default {
       type :Object
   }
   },
-  created(){
-    console.log(this.params.rule.key);
-  }
 }
 </script>
 

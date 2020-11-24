@@ -54,7 +54,6 @@ export default {
             this.$bus.$emit("imgLoad");
         },
         choose(index) {
-            console.log(index);
             switch (index) {
                 case 0:
                     this.genre = "pop";

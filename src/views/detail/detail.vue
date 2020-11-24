@@ -103,7 +103,6 @@ export default {
   },
   created(){
     getDetail(this.$route.params.id).then(res =>{
-      console.log(res);
       let result = res.result
       let info = res.result.itemInfo
       this.images = info.topImages
