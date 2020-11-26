@@ -1,4 +1,4 @@
-# Vue shopping-mall
+# shopping-mall ECサイト
 
 ## vue 練習用の個人プロジェクト
 
