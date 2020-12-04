@@ -1,17 +1,34 @@
-# shopping-mall ECサイト
+# shopping-mall EC サイト
 
-## vue 練習用の個人プロジェクト
+## vue 練習用の個人アプリ
 
--   中国のある EC サイトを参考し、制作しました。
--   サーバーでデプロイされていませんので、clone して、下記の手順でプロジェクト全体をご覧ください
--   スキルスタッフ
+- 中国のある EC サイトを参考し、制作しました。
 
-    -   vue
-    -   vuex
-    -   vuerouter
-    -   webpack
-    -   axios
-    -   ES6
+## 開発スキル
+
+    - vue
+    - vuex
+    - vuerouter
+    - webpack
+    - axios
+    - ES6
+    - better-scroll　スクロールライブラリ
+    - swiper　スライドライブラリ
+    - sass　cssプリプロセッサ
+
+## 実装機能
+
+    - ECサイトホーム
+    - カテゴリー一覧
+    - 商品詳細画面
+    - 商品追加、削除機能
+    - 商品レビュー情報
+    - 商品提供者情報
+    - カート追加、削除、クリア機能
+
+## 未実装機能
+
+    - マイページ
 
 ## Project setup
 
