@@ -3,16 +3,21 @@
 ## vue 練習用の個人プロジェクト
 
 -   中国のある EC サイトを参考し、制作しました。
--   サーバーでデプロイされていませんので、clone して、下記の手順でプロジェクト全体をご覧ください
--   スキルスタッフ
-
+## スキル
     -   vue
     -   vuex
     -   vuerouter
     -   webpack
     -   axios
     -   ES6
+    -   better-scroll　スクロールライブラリ
+    -   swiper　スライドライブラリ
+    -   sass　cssプリプロセッサ
+    
+## 実装された機能
 
+    -   ECサイトホーム
+    -   
 ## Project setup
 
 ```
